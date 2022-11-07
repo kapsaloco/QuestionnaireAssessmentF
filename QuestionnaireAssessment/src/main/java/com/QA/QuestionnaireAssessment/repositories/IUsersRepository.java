@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.QA.QuestionnaireAssessment.models.Users;
 
 @Repository
-public interface IUsersInterface extends JpaRepository<Users, Long> {
+public interface IUsersRepository extends JpaRepository<Users, Long> {
 	
 }
