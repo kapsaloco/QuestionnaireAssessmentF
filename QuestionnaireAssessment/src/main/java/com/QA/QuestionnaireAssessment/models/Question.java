@@ -11,8 +11,6 @@ import java.util.List;
 
 @Entity
 @Table
-@Getter
-@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 
@@ -28,10 +26,40 @@ public class Question {
     @JsonIgnore
     @OneToMany(mappedBy = "question", fetch = FetchType.EAGER)
     private List<Answer> answers;
-
-    public Question(String question) {
-        this.question = question;
+    
+    public Question() {
+    	
     }
+    
+	public Question(String question, List<Answer> answers) {
+        super();
+		this.question = question;
+		this.answers = answers;
+    }
+    
+    public long getqId() {
+		return qId;
+	}
+
+	public void setqId(long qId) {
+		this.qId = qId;
+	}
+
+	public String getQuestion() {
+		return question;
+	}
+
+	public void setQuestion(String question) {
+		this.question = question;
+	}
+
+	public List<Answer> getAnswers() {
+		return answers;
+	}
+
+	public void setAnswers(List<Answer> answers) {
+		this.answers = answers;
+	}
 
     @Override
     public String toString() {

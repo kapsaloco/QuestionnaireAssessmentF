@@ -33,9 +33,12 @@ public class Answer {
 	Question question;
 	@Column
 	String answers;
+	
+	public Answer() {
+		
+	}
 
-
-	private Answer(Question question, String answers) {
+	public Answer(Question question, String answers) {
 		super();
 		this.question = question;
 		this.answers = answers;
