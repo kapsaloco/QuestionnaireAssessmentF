@@ -17,13 +17,8 @@ import jakarta.persistence.Table;
 @Table
 public class Answer {
 	@Id
-	
-	@SequenceGenerator(
-			name="answer_sequence",
-			sequenceName = "answer_sequence"
-			)
 	@GeneratedValue(
-			strategy = GenerationType.SEQUENCE,
+			strategy = GenerationType.IDENTITY,
 			generator = "answer_sequence"
 			)
 	private long aId;
@@ -35,11 +30,9 @@ public class Answer {
 	String answers;
 	
 	public Answer() {
-		
 	}
 
 	public Answer(Question question, String answers) {
-		super();
 		this.question = question;
 		this.answers = answers;
 	}
