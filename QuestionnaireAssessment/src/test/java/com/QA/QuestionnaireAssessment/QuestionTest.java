@@ -22,7 +22,7 @@ public class QuestionTest {
         Assertions.assertTrue(0 < list.size());
     }
     @Test
-    public void AddOneFixedQuestion_AssertIsNotNull(){
+    public void AddOneFixedQuestion_AssertListSizes(){
         List<Question> list = questionService.getAllPLaces();
         //size of current list
         int listsize = list.size();
@@ -32,6 +32,12 @@ public class QuestionTest {
         list = questionService.getAllPLaces();
         int listsize2 = list.size();
         Assertions.assertTrue(listsize < listsize2);
+    }
+
+    @Test
+    public void GetOne_AssertISNotNull(){
+        Question question = questionService.getQuestion(1);
+        Assertions.assertNotNull(question);
     }
 
 }

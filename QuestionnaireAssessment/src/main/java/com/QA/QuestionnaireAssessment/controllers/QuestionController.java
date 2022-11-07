@@ -24,4 +24,9 @@ public class QuestionController {
     public Question addFixedQuestion(Question question){
         return questionService.addFixedQuestion(question);
     }
+
+    @GetMapping("/get/{qId}")
+    public Question getQuestion(@PathVariable long qId){
+        return questionService.getQuestion(qId);
+    }
 }
