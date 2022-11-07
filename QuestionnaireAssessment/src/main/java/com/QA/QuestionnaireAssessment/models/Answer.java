@@ -17,6 +17,7 @@ import jakarta.persistence.Table;
 @Table
 public class Answer {
 	@Id
+	
 	@SequenceGenerator(
 			name="answer_sequence",
 			sequenceName = "answer_sequence"
