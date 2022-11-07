@@ -11,7 +11,6 @@ import java.util.List;
 
 @Entity
 @Table
-@NoArgsConstructor
 @AllArgsConstructor
 
 public class Question {
@@ -30,7 +29,11 @@ public class Question {
     public Question() {
     	
     }
-    
+
+	public Question(String question) {
+		this.question = question;
+	}
+
 	public Question(String question, List<Answer> answers) {
         super();
 		this.question = question;
