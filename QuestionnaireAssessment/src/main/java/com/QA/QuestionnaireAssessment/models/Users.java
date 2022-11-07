@@ -1,6 +1,6 @@
 package com.QA.QuestionnaireAssessment.models;
 
-import org.springframework.lang.NonNull;
+import lombok.*;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -8,44 +8,38 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import lombok.Getter;
-import lombok.Setter;
-
-@Getter
-@Setter
 
 @Entity
-@Table(name="User")
-public class User {
+@Table
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+public class Users {
 	
 	@Id
-	@Column
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	@Column
 	private long uId;
 	
-	@Column(unique = true)
+	@Column
 	@NonNull
 	private String email;
 	
 	@Column
 	private String password;
-	
-	public User(Long uId, String email, String password) {
-		this.uId= uId;
+
+	public Users(@NonNull String email, String password) {
 		this.email = email;
-		this.password=password;
+		this.password = password;
 	}
-	public User(Long uId, String email) {
-		this.uId= uId;
-		this.email = email;
-		this.password=null;
+
+	@Override
+	public String toString() {
+		return "Users{" +
+				"uId=" + uId +
+				", email='" + email + '\'' +
+				", password='" + password + '\'' +
+				'}';
 	}
-	
-	public User(String email) {
-		this.email = email;
-	}
-	
-	public User() {
-	}
-	
 }

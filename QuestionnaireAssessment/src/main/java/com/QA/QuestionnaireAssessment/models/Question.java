@@ -32,4 +32,13 @@ public class Question {
     public Question(String question) {
         this.question = question;
     }
+
+    @Override
+    public String toString() {
+        return "Question{" +
+                "qId=" + qId +
+                ", question='" + question + '\'' +
+                ", answers=" + answers +
+                '}';
+    }
 }
