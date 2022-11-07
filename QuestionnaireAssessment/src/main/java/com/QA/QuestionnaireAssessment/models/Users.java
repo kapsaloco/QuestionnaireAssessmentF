@@ -14,11 +14,11 @@ import jakarta.persistence.Table;
 public class Users {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column
 	private long uId;
 	
-	@Column
+	@Column (unique = true)
 	@NonNull
 	private String email;
 	
