@@ -34,7 +34,7 @@ public class UsersController {
 	private UsersService userService;
 	
 	@GetMapping("/users")
-	public List<Users> places() {
+	public List<Users> users() {
 		return userService.findAll();
 	}
 	
