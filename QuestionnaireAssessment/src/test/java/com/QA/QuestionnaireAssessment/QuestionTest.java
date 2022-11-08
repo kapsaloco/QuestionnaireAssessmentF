@@ -40,4 +40,23 @@ public class QuestionTest {
         Assertions.assertNotNull(question);
     }
 
+    @Test
+    public void CheckIfTheLastObjectFromTheListIsQuestionAndNotNull(){
+        List<Question> list = questionService.getAllPLaces();
+        Question q = list.get(list.size() - 1);
+        Assertions.assertNotNull(q);
+        //Question question = questionService.addQuestion(question);
+    }
+    @Test
+    public void AddOne_SeeIfAdded(){
+        List<Question> list = questionService.getAllPLaces();
+        Question q1 = list.get(list.size() - 1);
+        Question newq = new Question("How much do you bench homie?");
+        questionService.addQuestion(newq);
+        list = questionService.getAllPLaces();
+        Question q2 = list.get(list.size() -1);
+        Assertions.assertNotSame(q1,q2);
+    }
+
+
 }
