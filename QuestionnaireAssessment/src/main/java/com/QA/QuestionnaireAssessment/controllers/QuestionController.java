@@ -29,4 +29,9 @@ public class QuestionController {
     public Question getQuestion(@PathVariable long qId){
         return questionService.getQuestion(qId);
     }
+
+    @PostMapping("add")
+    public Question addQuestion(@RequestBody Question question){
+        return questionService.addQuestion(question);
+    }
 }

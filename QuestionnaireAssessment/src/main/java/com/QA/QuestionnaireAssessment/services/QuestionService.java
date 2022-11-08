@@ -28,4 +28,8 @@ public class QuestionService {
         Optional<Question> questions = questionsRepository.findById(qId);
         return questions.get();
     }
+
+    public Question addQuestion(Question question) {
+        return questionsRepository.save(question);
+    }
 }
